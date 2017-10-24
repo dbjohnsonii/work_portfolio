@@ -1,1 +1,0 @@
-# DaleJohnson_GA update
