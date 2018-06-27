@@ -39,7 +39,7 @@ LEFT JOIN
     (select fdwo.mb_bin_table_full.bin,fdwo.mb_bin_table_full.clas_plat from fdwo.mb_bin_table_full 
     group by fdwo.mb_bin_table_full.bin,fdwo.mb_bin_table_full.clas_plat) bn
 ON ab.issuer_bin=bn.bin
-WHERE (ab.transaction_date) BETWEEN TO_DATE('02-01-2018','MM-DD-YYYY') AND TO_DATE('05-31-2018','MM-DD-YYYY')
+WHERE (ab.transaction_date) BETWEEN TO_DATE('04-01-2018','MM-DD-YYYY') AND TO_DATE('05-31-2018','MM-DD-YYYY')
 AND ab.contract_id IN(5859,9391,4074,2201,2520,6891,9346,3195,2206,9411,8665,1946,9348,8966,9522,8970,1837
       ,9513,9415,7793,9226,8663,4878,3002,2160,9527,9524,2095,9416,4004,9511,5983,3063,9458
       ,9515,9528,4075,9510,9418,8953,2791,6886,3877,9514,9512,9455,2346,2165,2792,8968,9525
