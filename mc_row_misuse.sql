@@ -1,5 +1,5 @@
 sqlplus/nolog
-connect djohnson/RhiBoo02!@ODSPEU1.ams
+connect djohnson/Kirky2016!@ODSPEU1.ams
 set echo off
 set feedback off
 set colsep ';'
@@ -13,7 +13,7 @@ set heading on
 set trimout on
 set wrap off
 set termout off
-spo \\amscifs01\homefolders$\djohnson\Desktop\mc_row_mu.csv
+spo \\amscifs01\homefolders$\djohnson\Desktop\mc_row_mu.txt
 SELECT 
 extract(month from CAST(pa.statusdate AS DATE))
 ,extract(year from CAST(pa.statusdate AS DATE))

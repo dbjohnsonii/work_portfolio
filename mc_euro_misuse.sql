@@ -1,5 +1,5 @@
 sqlplus/nolog
-connect djohnson/RhiBoo02!@ODSPEU1.ams
+connect djohnson/Kirky2016!@ODSPEU1.ams
 set echo off
 set feedback off
 set colsep ';'
@@ -13,7 +13,7 @@ set heading on
 set trimout on
 set wrap off
 set termout off
-spo \\amscifs01\homefolders$\djohnson\Desktop\mc_euro_misuse.csv
+spo \\amscifs01\homefolders$\djohnson\Desktop\mc_euro_misuse.txt
 SELECT 
 extract(month from CAST(pa.statusdate AS DATE))
 ,extract(year from CAST(pa.statusdate AS DATE))
@@ -48,7 +48,7 @@ LEFT JOIN
 (SELECT 
     contract_id,payment_processor_nr,transaction_currency,bin,icplus_type,invoice_currency
     FROM fdwo.cc_processing_data_pt
-    WHERE MATCH_DATE BETWEEN TO_DATE('4/1/2018','MM/DD/YYYY') AND TO_DATE('4/30/2018','MM/DD/YYYY')
+    WHERE MATCH_DATE BETWEEN TO_DATE('5/1/2018','MM/DD/YYYY') AND TO_DATE('5/31/2018','MM/DD/YYYY')
     AND TRANSACTION_TYPE='TRANSACTION'
     AND INVOICE_CURRENCY IS NOT NULL
     AND TRADING_REVENUE IS NOT NULL
@@ -57,7 +57,7 @@ ON CO.PAYMENTPROCESSOR=cc.payment_processor_nr
 AND PA.CONTRACTID=cc.contract_id
 AND pa.currencycode=cc.transaction_currency
 AND co.IIN=cc.BIN
-WHERE pa.statusdate BETWEEN TO_DATE('4/1/2018','MM/DD/YYYY') AND TO_DATE('4/30/2018','MM/DD/YYYY')
+WHERE pa.statusdate BETWEEN TO_DATE('5/1/2018','MM/DD/YYYY') AND TO_DATE('5/31/2018','MM/DD/YYYY')
 AND pa.statusid in (525,600)
 and paymentproductid=3
 and pp.interchange_region IN('Europe','EMEA')
